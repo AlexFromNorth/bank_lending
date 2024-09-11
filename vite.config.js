@@ -1,14 +1,64 @@
 import { defineConfig } from 'vite';
-import imagemin from 'vite-plugin-imagemin';
+import viteImagemin from 'vite-plugin-imagemin';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+
 
 export default defineConfig({
   plugins: [
-    imagemin({
-      gifsicle: { optimizationLevel: 3 }, // Настройки для GIF
-      optipng: { optimizationLevel: 5 }, // Настройки для PNG
-      mozjpeg: { quality: 50 }, // Попробуйте изменить качество
-      pngquant: { quality: [0.6, 0.8], speed: 4 }, // Настройки для PNG
-      svgo: { plugins: [{ removeViewBox: false }] }, // Настройки для SVG
+    ViteImageOptimizer({
+      test: /\.(jpe?g|png|gif|tiff|webp|svg|avif)$/i,
+      exclude: undefined,
+      include: undefined,
+      includePublic: true,
+      logStats: true,
+      ansiColors: true,
+      svg: {
+        multipass: true,
+        plugins: [
+          {
+            name: 'preset-default',
+            params: {
+              overrides: {
+                cleanupNumericValues: false,
+                removeViewBox: false, 
+              },
+              cleanupIDs: {
+                minify: false,
+                remove: false,
+              },
+              convertPathData: false,
+            },
+          },
+          'sortAttrs',
+          {
+            name: 'addAttributesToSVGElement',
+            params: {
+              attributes: [{ xmlns: 'http://www.w3.org/2000/svg' }],
+            },
+          },
+        ],
+      },
+      png: {
+        quality: 100,
+      },
+      jpeg: {
+        quality: 100,
+      },
+      jpg: {
+        quality: 100,
+      },
+      tiff: {
+        quality: 100,
+      },
+      gif: {},
+      webp: {
+        lossless: true,
+      },
+      avif: {
+        lossless: true,
+      },
+      cache: false,
+      cacheLocation: undefined,
     }),
   ],
   build: {
@@ -30,3 +80,5 @@ export default defineConfig({
     },
   },
 });
+
+
