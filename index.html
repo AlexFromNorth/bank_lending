@@ -4,24 +4,40 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Alpaca Bank</title>
+    <link rel="stylesheet" href="default.scss">
+    <link rel="stylesheet" href="custom.scss">
+    <link rel="stylesheet" href="header.scss">
+    <link rel="stylesheet" href="main.scss">
+    <link rel="stylesheet" href="media.scss">
   </head>
   <body>
     <header class="header container">
         <nav>
-          <a href="">logo</a>
+          <a href=""><img src="public/logo.svg" alt="logo" srcset=""></a>
         </nav>
-        <nav class="header__navigation width60">
+        <nav class="header__navigation">
             <a href="">Главная</a>
-            <a href="">Основное меню</a>
+            <div>
+              <a href="#">Основное меню</a>
+              <img src="public/triangle.svg" alt="triangle">
+            </div>
             <a href="">Наши сервисы</a>
             <a href="">Контакты</a>
         </nav>
         <nav>
-          <a href="tel:+13212223333">+1 (321) 222 - 33 -33</a>
+          <a class="tel" href="tel:+13212223333">+1 (321) 222 - 33 -33</a>
         </nav>
-        <div class="burger">burger</div>
+        <div class="menu">
+          <button id="burger-button" class="burger"></button>
+          <ul id="menu-list" class="menu-list">
+              <li><a href="#" class="menu-item">Главная</a></li>
+              <li><a href="#" class="menu-item">О нас</a></li>
+              <li><a href="#" class="menu-item">Команда</a></li>
+              <li><a href="#" class="menu-item">Контакты</a></li>
+          </ul>
+        </div>
+        <!-- <div class="burger"><img src="/public/burger.svg" alt="burger menu"></div> -->
     </header>
 
     <main class="main">
@@ -29,4 +45,5 @@
     </main>
 
   </body>
+  <script src="/main.js"></script>
 </html>

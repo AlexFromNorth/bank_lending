@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-import viteImagemin from 'vite-plugin-imagemin';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 

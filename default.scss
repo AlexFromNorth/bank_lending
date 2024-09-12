@@ -1,0 +1,19 @@
+:root {
+    --header-black: #131417;
+    --header-red: #EB5757;
+    --item-grey: #252830;
+  }
+  
+  body{
+    height: 100vh;
+  }
+  *, body{
+    color: white;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--header-black);
+  }
+  a{
+    text-decoration: none;
+  }

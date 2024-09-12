@@ -1,0 +1,19 @@
+// planshet
+@media screen and (max-width: 800px) {
+    body{
+        background-color: red!important;
+    }
+    *{
+        color: green;
+    }
+  }
+
+// tel
+@media screen and (max-width: 400px) {
+    body{
+        background-color: red!important;
+    }
+    *{
+        color: blue;
+    }
+  }

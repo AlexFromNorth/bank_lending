@@ -21,9 +21,7 @@ a{
 .container{
     padding: 17px 10%;
 }
-.width60{
-    width: 50%;
-}
+
 
 
 
@@ -35,10 +33,24 @@ a{
 }
 .header > nav {
     display: inline;
+    display: table;
 }
+.header > nav a {
+    margin-top: 14px;
+}
+.header > nav .tel {
+    display: inline-block;
+}
+
 .header__navigation{
+    width: 50%;
     display: flex !important;
     justify-content: space-between;
+}
+
+.header .burger{
+    margin-top: 16px;
+    display: inline-block;
 }
 
 
