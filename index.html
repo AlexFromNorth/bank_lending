@@ -22,15 +22,15 @@
               <a href="#">Основное меню</a>
               <img src="public/triangle.svg" alt="triangle" class="triangle-icon">
               <ul class="dropdown-menu">
-                <li>Элемент 1</li>
-                <li>Элемент 2</li>
-                <li>Элемент 3</li>
+                <li>Заказать вёрстку</li>
+                <li>Отправить макет на проверку</li>
+                <li>Хочу работать у вас</li>
                 <li class="has-submenu">
-                  Элемент 4
+                  Есть предложение по работе с кл...
                   <img src="public/triangle.svg" alt="triangle" class="submenu-triangle">
                   <ul class="submenu">
-                    <li>Айтем 1</li>
-                    <li>Айтем 2</li>
+                    <li>У меня есть оффер</li>
+                    <li>Сделать партнёром</li>
                   </ul>
                 </li>
               </ul>
@@ -39,17 +39,34 @@
             
             <a href="">Наши сервисы</a>
             <a href="">Контакты</a>
-        </nav>
-        <nav>
-          <a class="tel" href="tel:+13212223333">+1 (321) 222 - 33 -33</a>
+          </nav>
+          <nav class="telephone">
+            <a class="tel" href="tel:+13212223333"><img src="/public/telephone.svg" alt="tel Logo"> <span>+1 (321) 222 - 33 - 33</span></a>
+          
         </nav>
         <div class="menu">
           <button id="burger-button" class="burger"></button>
           <ul id="menu-list" class="menu-list">
               <li><a href="#" class="menu-item">Главная</a></li>
-              <li><a href="#" class="menu-item">О нас</a></li>
-              <li><a href="#" class="menu-item">Команда</a></li>
-              <li><a href="#" class="menu-item">Контакты</a></li>
+              <div class="click-menu">
+                <li><a href="#" class="menu-item">Основное меню <img src="public/triangle.svg" alt="triangle" class="triangle-icon"></a></li>
+                <div class="w100">
+                  <li><a href="#" class="menu-item">Заказать вёрстку</a></li>
+                  <li><a href="#" class="menu-item">Отправить макет на проверку</a></li>
+                  <li><a href="#" class="menu-item">Хочу работать у вас</a></li>
+                </div>
+              </div>
+              
+              <div class="click-offer">
+                <li><a href="#" class="menu-item">Есть предложение по работе с клиентами <img src="public/triangle.svg" alt="triangle" class="triangle-icon"></a></li>
+                <div class="w100">
+                  <li><a href="#" class="menu-item">У меня есть оффер</a></li>
+                  <li><a href="#" class="menu-item">Сделать партнёров</a></li>
+                  <li><a href="#" class="menu-item">Наши сервисы</a></li>
+                  <li><a href="#" class="menu-item">Контакты</a></li>
+                </div>
+              </div>
+
           </ul>
         </div>
         <!-- <div class="burger"><img src="/public/burger.svg" alt="burger menu"></div> -->

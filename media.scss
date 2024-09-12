@@ -1,19 +1,42 @@
 // planshet
-@media screen and (max-width: 800px) {
-    body{
-        background-color: red!important;
-    }
-    *{
-        color: green;
+@media screen and (max-width: 880px) {
+   .header{
+
+        .header__navigation{
+            display: none!important;
+        }
+        .menu{
+            display: inline-block;
+
+            a:active {
+                background-color: var(--header-black)!important;
+              }
+            a:hover {
+                background-color: var(--header-black)!important;
+              }
+        }
     }
   }
 
 // tel
-@media screen and (max-width: 400px) {
-    body{
-        background-color: red!important;
-    }
-    *{
-        color: blue;
+@media screen and (max-width: 450px) {
+    .header{
+
+        .telephone{
+            margin-right: -120px;
+
+            span{
+                display: none;
+            }
+        }
+
+        .menu {
+
+            
+            .menu-list {
+              top: 70px;
+              width: 100%;
+            }
+        }
     }
   }

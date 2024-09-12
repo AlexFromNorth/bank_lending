@@ -9,20 +9,29 @@
     transition: .3s;
   }
 
-  a:hover {
+  a:hover, span:hover {
     color: var(--header-red);
   }
+
 
   > nav {
     display: inline;
     display: table;
 
     > * {
-      margin-top: 14px;
+      margin-top: 12px;
     }
 
     > .tel {
       display: inline-block;
+
+      img{
+        margin-top: -2px;
+        margin-right: 10px;
+      }
+      span{
+        vertical-align: top;
+      }
     }
   }
 
@@ -60,23 +69,37 @@
 /* Выпадающий список */
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 65px;
   left: 0;
   margin: 0;
+  width: 280px;
+  border-radius: 0px 0px 8px 8px;
   padding: 0;
   list-style: none;
-  background-color: var(--header-black);
+  // background-color: var(--header-black);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s ease, visibility 0.4s ease; /* Плавное появление/исчезновение */
+  border-radius: 5px;
+  display: inline-block;
+  // background-color: var(--item-grey);
 }
 
 .dropdown-menu li {
   padding: 8px 12px;
   color: white;
   cursor: pointer;
-}
+  transition: .4s;
+    background-color: var(--item-grey);
+  }
+  .dropdown-menu li:last-child{
+    border-radius:  0 0   5px  5px  ;
+  }
 
+  .dropdown-menu li:hover {
+    background-color: var(--header-black);
+
+  }
 /* Элемент с подменю */
 .has-submenu {
   position: relative;
@@ -95,8 +118,10 @@
 /* Скрытое подменю */
 .submenu {
   position: absolute;
-  top: 0;
-  left: 100%;
+  top: -30px;
+  left: 110%;
+  width: 180px;
+  text-align: center;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -104,6 +129,29 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s ease, visibility 0.4s ease;
+  border-radius: 5px;
+
+
+
+  li:first-child{
+    border-radius: 5px;
+    border-radius:     5px  5px 0 0 ;
+
+  }
+  li:nth-of-type(2){
+    position: relative;
+    border-radius:  0 0   5px  5px  ;
+  }
+  li:nth-of-type(2)::before{
+    background-image: url('./public/drop-arrow.svg');
+    content: '';
+    position: absolute;
+    left: -13px;
+    top: 4px;
+    
+    width: 18px;
+    height: 29px;
+  }
 }
 
 /* Когда выпадающее меню активно */
@@ -114,6 +162,9 @@
 
 /* Поворот треугольника на 90 градусов */
 .menu-container.active .triangle-icon {
+  transform: rotate(90deg);
+}
+.active.triangle-icon {
   transform: rotate(90deg);
 }
 
@@ -139,6 +190,7 @@
 
   // burger menu
   .menu {
+    display: none;
     margin-top: 14px;
     position: relative; /* Относительное позиционирование для управления меню */
 
@@ -152,12 +204,19 @@
       background-size: cover;
     }
 
+    .click-menu > div{
+      display: none;
+    }
+    .click-offer > div{
+      display: none;
+    }
+
     .menu-list {
       position: fixed; /* Фиксируем меню относительно экрана */
       top: 50px;
       right: 0;
       height: 100%;
-      width: 200px;
+      width: 50%;
       background: var(--header-black);
       padding: 42px 0;
       margin: 0;
