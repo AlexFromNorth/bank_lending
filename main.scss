@@ -1,0 +1,16 @@
+
+.main{
+    height: calc(100% - 92px);
+    width: 100vw;
+    /* background-size: cover; */
+    overflow: hidden;
+  
+  
+  }
+  .main img{
+    background-size: auto;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    /* overflow: hidden; */
+  }

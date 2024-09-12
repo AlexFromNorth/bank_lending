@@ -1,0 +1,42 @@
+// planshet
+@media screen and (max-width: 768px) {
+   .header{
+
+        .header__navigation{
+            display: none!important;
+        }
+        .menu{
+            display: inline-block;
+
+            a:active {
+                background-color: var(--header-black)!important;
+              }
+            a:hover {
+                background-color: var(--header-black)!important;
+              }
+        }
+    }
+  }
+
+// tel
+@media screen and (max-width: 376px) {
+    .header{
+
+        .telephone{
+            margin-right: -120px;
+
+            span{
+                display: none;
+            }
+        }
+
+        .menu {
+
+            
+            .menu-list {
+              top: 70px;
+              width: 100%;
+            }
+        }
+    }
+  }
