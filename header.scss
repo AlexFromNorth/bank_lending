@@ -1,35 +1,38 @@
+$border-radius: 5px;
 .header {
   display: flex;
   justify-content: space-between;
   background: var(--header-black);
   box-shadow: 0px 4px 4px 0px var(--header-black);
-  position: relative; /* Для корректного абсолютного позиционирования дочерних элементов */
+  position: relative;
 
   a {
-    transition: .3s;
+    transition: 0.3s;
+    &:hover {
+      color: var(--header-red);
+    }
   }
 
-  a:hover, span:hover {
+  span:hover {
     color: var(--header-red);
   }
 
-
   > nav {
-    display: inline;
     display: table;
 
     > * {
       margin-top: 12px;
     }
 
-    > .tel {
+    .tel {
       display: inline-block;
 
-      img{
+      img {
         margin-top: -2px;
         margin-right: 10px;
       }
-      span{
+
+      span {
         vertical-align: top;
       }
     }
@@ -41,158 +44,123 @@
     justify-content: space-between;
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   // dropdown menu
-/* Контейнер для меню */
-.menu-container {
-  position: relative;
-  display: inline-block;
-}
-
-/* Иконка треугольника для основного меню */
-.triangle-icon {
-  transition: transform 0.4s ease; /* Плавный поворот треугольника */
-}
-
-/* Выпадающий список */
-.dropdown-menu {
-  position: absolute;
-  top: 65px;
-  left: 0;
-  margin: 0;
-  width: 280px;
-  border-radius: 0px 0px 8px 8px;
-  padding: 0;
-  list-style: none;
-  // background-color: var(--header-black);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease; /* Плавное появление/исчезновение */
-  border-radius: 5px;
-  display: inline-block;
-  // background-color: var(--item-grey);
-}
-
-.dropdown-menu li {
-  padding: 8px 12px;
-  color: white;
-  cursor: pointer;
-  transition: .4s;
-    background-color: var(--item-grey);
-  }
-  .dropdown-menu li:last-child{
-    border-radius:  0 0   5px  5px  ;
-  }
-
-  .dropdown-menu li:hover {
-    background-color: var(--header-black);
-
-  }
-/* Элемент с подменю */
-.has-submenu {
-  position: relative;
-  padding-right: 20px;
-}
-
-/* Иконка треугольника для подменю */
-.submenu-triangle {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: transform 0.4s ease;
-}
-
-/* Скрытое подменю */
-.submenu {
-  position: absolute;
-  top: -30px;
-  left: 110%;
-  width: 180px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  background-color: var(--header-black);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-  border-radius: 5px;
-
-
-
-  li:first-child{
-    border-radius: 5px;
-    border-radius:     5px  5px 0 0 ;
-
-  }
-  li:nth-of-type(2){
+  .menu-container {
     position: relative;
-    border-radius:  0 0   5px  5px  ;
+    display: inline-block;
+
+    .triangle-icon {
+      transition: transform 0.4s ease;
+    }
+
+    &.active {
+      .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .triangle-icon {
+        transform: rotate(90deg);
+      }
+    }
   }
-  li:nth-of-type(2)::before{
-    background-image: url('./public/drop-arrow.svg');
-    content: '';
+
+  .dropdown-menu {
     position: absolute;
-    left: -13px;
-    top: 4px;
-    
-    width: 18px;
-    height: 29px;
+    top: 65px;
+    left: 0;
+    margin: 0;
+    width: 310px;
+    border-radius: $border-radius;
+    padding: 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    display: inline-block;
+    background-color: var(--item-grey);
+
+    li {
+      padding: 8px 18px;
+      color: white;
+      cursor: pointer;
+      transition: 0.4s;
+      background-color: var(--item-grey);
+
+      &:last-child {
+        border-radius: 0 0 $border-radius $border-radius;
+      }
+
+      &:hover {
+        background-color: var(--header-black);
+      }
+    }
   }
-}
 
-/* Когда выпадающее меню активно */
-.menu-container.active .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-}
+  .has-submenu {
+    position: relative;
+    padding-right: 20px;
 
-/* Поворот треугольника на 90 градусов */
-.menu-container.active .triangle-icon {
-  transform: rotate(90deg);
-}
-.active.triangle-icon {
-  transform: rotate(90deg);
-}
+    .submenu-triangle {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.4s ease;
+    }
 
-/* Подменю видно при наведении */
-.has-submenu:hover .submenu {
-  opacity: 1;
-  visibility: visible;
-}
+    &:hover {
+      .submenu {
+        opacity: 1;
+        visibility: visible;
+      }
 
-/* Поворот треугольника у подменю */
-.has-submenu:hover .submenu-triangle {
-  transform: rotate(90deg);
-}
+      .submenu-triangle {
+        transform: rotate(90deg);
+      }
+    }
+  }
 
+  .submenu {
+    position: absolute;
+    top: -35px;
+    left: 110%;
+    width: 200px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: var(--header-black);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    border-radius: $border-radius;
 
+    li:first-child {
+      border-radius: $border-radius $border-radius 0 0;
+    }
 
+    li:nth-of-type(2) {
+      position: relative;
+      border-radius: 0 0 $border-radius $border-radius;
 
-
-
-
-
-
+      &::before {
+        background-image: url('./public/drop-arrow.svg');
+        content: '';
+        position: absolute;
+        left: -13px;
+        top: 4px;
+        width: 18px;
+        height: 29px;
+      }
+    }
+  }
 
   // burger menu
   .menu {
     display: none;
     margin-top: 14px;
-    position: relative; /* Относительное позиционирование для управления меню */
+    position: relative;
 
     .burger {
       cursor: pointer;
@@ -204,44 +172,41 @@
       background-size: cover;
     }
 
-    .click-menu > div{
-      display: none;
-    }
-    .click-offer > div{
+    .click-menu > div,
+    .click-offer > div {
       display: none;
     }
 
     .menu-list {
-      position: fixed; /* Фиксируем меню относительно экрана */
+      position: fixed;
       top: 50px;
       right: 0;
       height: 100%;
       width: 50%;
       background: var(--header-black);
       padding: 42px 0;
-      margin: 0;
       list-style-type: none;
-      transform: translateX(100%); /* Скрываем меню за правой границей экрана */
-      transition: transform .3s ease; /* Плавная анимация появления */
-      z-index: 1000; /* Убедитесь, что меню всегда сверху */
-    }
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
 
-    .menu-item {
-      display: block;
-      padding: 8px;
-      color: white;
-      font-size: 18px;
-      text-align: center;
-      text-decoration: none;
-      background-color: var(--item-grey);
-    }
+      &.show {
+        transform: translateX(0);
+      }
 
-    .menu-item:hover {
-      background: rgba(255, 255, 255, .2);
-    }
+      .menu-item {
+        display: block;
+        padding: 8px;
+        color: white;
+        font-size: 18px;
+        text-align: center;
+        text-decoration: none;
+        background-color: var(--item-grey);
 
-    .menu-list.show {
-      transform: translateX(0); /* Показываем меню на экране */
+        &:hover {
+          background: rgba(255, 255, 255, 0.2);
+        }
+      }
     }
   }
 }

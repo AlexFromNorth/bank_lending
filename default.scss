@@ -1,3 +1,5 @@
+
+
 :root {
     --header-black: #131417;
     --header-red: #EB5757;
@@ -13,6 +15,9 @@
     margin: 0;
     padding: 0;
     background-color: var(--header-black);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
   a{
     text-decoration: none;
