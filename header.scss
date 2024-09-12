@@ -32,6 +32,112 @@
     justify-content: space-between;
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // dropdown menu
+/* Контейнер для меню */
+.menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Иконка треугольника для основного меню */
+.triangle-icon {
+  transition: transform 0.4s ease; /* Плавный поворот треугольника */
+}
+
+/* Выпадающий список */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: var(--header-black);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease; /* Плавное появление/исчезновение */
+}
+
+.dropdown-menu li {
+  padding: 8px 12px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Элемент с подменю */
+.has-submenu {
+  position: relative;
+  padding-right: 20px;
+}
+
+/* Иконка треугольника для подменю */
+.submenu-triangle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.4s ease;
+}
+
+/* Скрытое подменю */
+.submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: var(--header-black);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* Когда выпадающее меню активно */
+.menu-container.active .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Поворот треугольника на 90 градусов */
+.menu-container.active .triangle-icon {
+  transform: rotate(90deg);
+}
+
+/* Подменю видно при наведении */
+.has-submenu:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Поворот треугольника у подменю */
+.has-submenu:hover .submenu-triangle {
+  transform: rotate(90deg);
+}
+
+
+
+
+
+
+
+
+
+
+  // burger menu
   .menu {
     margin-top: 14px;
     position: relative; /* Относительное позиционирование для управления меню */

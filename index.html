@@ -18,10 +18,25 @@
         </nav>
         <nav class="header__navigation">
             <a href="">Главная</a>
-            <div>
+            <div class="menu-container">
               <a href="#">Основное меню</a>
-              <img src="public/triangle.svg" alt="triangle">
+              <img src="public/triangle.svg" alt="triangle" class="triangle-icon">
+              <ul class="dropdown-menu">
+                <li>Элемент 1</li>
+                <li>Элемент 2</li>
+                <li>Элемент 3</li>
+                <li class="has-submenu">
+                  Элемент 4
+                  <img src="public/triangle.svg" alt="triangle" class="submenu-triangle">
+                  <ul class="submenu">
+                    <li>Айтем 1</li>
+                    <li>Айтем 2</li>
+                  </ul>
+                </li>
+              </ul>
             </div>
+            
+            
             <a href="">Наши сервисы</a>
             <a href="">Контакты</a>
         </nav>
